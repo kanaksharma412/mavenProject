@@ -13,14 +13,14 @@ public class User {
 	private String Gender;
 	
 	public User() {
-		this.Email = "example@gmail.com";
-		this.Password = "Password1!";
-		this.FirstName = "John";
-		this.LastName = "Doe";
-		this.Day = 1;
-		this.Month = 1;
-		this.Year = 1;
-		this.Gender = "male";
+		this.Email = "email";
+		this.Password = "password";
+		this.FirstName = "firstname";
+		this.LastName = "lastname";
+		this.Day = -1;
+		this.Month = -1;
+		this.Year = -1;
+		this.Gender = "gender";
 		
 	}
 
@@ -73,10 +73,10 @@ public class User {
 		int n = firstName.length();
 		String str = firstName.replaceAll("[^a-zA-Z]","");
 		int n1 = str.length();
-		if(n==n1 && n!=0) {
+		if(n==n1 && n>=2) {
 		FirstName = firstName;
 		}else {
-			System.out.println("Enter a valid name Ex:"+ FirstName);
+			System.out.println("Enter a valid name Ex John,Kanak,Joey");
 		}
 		
 	}
@@ -89,10 +89,10 @@ public class User {
 		int n = lastName.length();
 		String str = lastName.replaceAll("[^a-zA-Z]","");
 		int n1 = str.length();
-		if(n==n1 && n!=0) {
+		if(n==n1 && n>2) {
 		LastName = lastName;
 		}else {
-			System.out.println("Enter a valid name Ex:"+ LastName);
+			System.out.println("Enter a valid name Ex Sharma,Khan,Singh,Clooney");
 		}
 	}
 
@@ -104,7 +104,7 @@ public class User {
 		if(month >=1 && month <=12) {
 		Month = month;
 		}else {
-			System.out.println("Please Enter a valid month");
+			System.out.println("Please Enter a valid month number between 1-12");
 		}
 	}
 
@@ -116,7 +116,7 @@ public class User {
 		if(day>=1 && day<=31) {
 		Day = day;
 		} else {
-			System.out.println("Please Enter a valid month");
+			System.out.println("Please Enter a valid day number between 1-31");
 		}
 	}
 
@@ -128,8 +128,12 @@ public class User {
 		if(year>=1903 && year<=2020) {
 		Year = year;
 		}else {
-			System.out.println("Please Enter a valid year");
+			System.out.println("Please Enter a valid year number between 1903-2020");
 		}
+	}
+	public String dateOfBirth() {
+		 String ans = Month + "/"+ Day + "/" + Year;
+		 return ans;
 	}
 
 	public String getGender() {
@@ -145,7 +149,7 @@ public class User {
 		if(gen.contains(gender)) {
 			Gender = gender;
 		}else {
-			System.out.println("Enter valid gender");
+			System.out.println("Enter valid gender male/female/other");
 		}
 	}
 	
