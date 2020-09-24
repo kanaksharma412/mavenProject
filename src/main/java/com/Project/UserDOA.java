@@ -8,30 +8,32 @@ public class UserDOA {
 	}
 	
 	public void removeUser(String email) {
+		boolean present = false;
 		if(email.length()==0) throw new IllegalArgumentException("email cannot be null");
 		if(list.size()==0) throw new IllegalArgumentException("You need to make an accout first the list is empty");
 		User remUser = null;
 		for(User user : list) {
 			if(user.getEmail().equals(email)) {
 				remUser = user;
-			}else {
-				throw new IllegalArgumentException("Your not in the List!");
+				present = true;
 			}
 		}
-		System.out.println(remUser.getFirstName()+" "+remUser.getLastName()+ "has been removed");
+		if(present==false) throw new IllegalArgumentException("Your Not in the list!"); 
+		System.out.println(remUser.getFirstName()+" "+remUser.getLastName()+ " has been removed");
 		list.remove(remUser);
 	}
 	public void updateUser(String email) {
+		boolean present = false;
 		if(email.length()==0) throw new IllegalArgumentException("email cannot be null");
 		if(list.size()==0) throw new IllegalArgumentException("You need to make an accout first the list is empty");
 		User updateUser = null;
 		for(User user : list) {
 			if(user.getEmail().equals(email)) {
 				updateUser = user;
-			}else {
-				throw new IllegalArgumentException("Your not in the List!");
+				present = true;
 			}
 		}
+		if(present==false) throw new IllegalArgumentException("Your not in the list!");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("What do you want to update:");
 		System.out.println("Enter 1 to update Last Name");
