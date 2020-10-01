@@ -1,0 +1,1 @@
+create table users (FirstName TEXT, LastName TEXT PRIMARY KEY, Email TEXT, Password TEXT, BirthDate TEXT, Gender TEXT);

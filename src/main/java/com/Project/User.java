@@ -57,8 +57,6 @@ public class User {
 			}
 			if(Character.isUpperCase(password.charAt(0)) && NumCount > 0 && SpecialCount > 0) {
 				Password = password;
-			}else {
-				System.out.println("The password must be 8 characters or longer with atleast 1 number, 1 special character and the first character must be uppercase");
 			}
 		}else {
 			System.out.println("The password must be 8 characters or longer with atleast 1 number, 1 special character and the first character must be uppercase");
